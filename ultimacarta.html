@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="possible.png">
+    <title>última carta</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Garamond', serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s; /* Transición suave */
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        body.light-mode h1 {
+            color: #555; /* Color oscuro para el título en modo claro */
+        }
+
+        .contenido {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .poema {
+            white-space: pre-line; /* Conserva los saltos de línea */
+            font-size: 1.2em;
+            line-height: 1.8;
+            text-align: center; /* Texto centrado */
+            margin: 0 auto; /* Centrar el bloque */
+            padding: 0 20px; /* Espaciado lateral */
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
+        }
+
+        body.light-mode .volver {
+            color: black; /* Texto oscuro en modo claro */
+            border-bottom-color: black; /* Borde oscuro en modo claro */
+        }
+
+        .volver:hover {
+            color: #ccc;
+            border-bottom-color: #ccc;
+        }
+
+        body.light-mode .volver:hover {
+            color: #555; /* Color oscuro en modo claro */
+            border-bottom-color: #555; /* Borde oscuro en modo claro */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <h1>Última Carta</h1>
+
+    <div class="contenido">
+        <div class="poema">
+            De aquella sonrisa que impregna mi esencia
+            cuando esta yace en blanco,
+            un blanco de un puro vacío,
+            un blanco anhelado tras un eterno tic tac,
+            un blanco con esencia de gardenia
+            que se inventa recuerdos
+            para conectarlos a tu gran pureza
+            y al color de aquel eterno encaje
+            que delineaba tu silueta
+            junto al auxilio de blancas perlas
+            abrazadas a la dicha de sentir la vida
+            en cada angelical de tus espiros.
+
+            Inevitable emblandecer interno
+            al cruzarme en la avenida de mi vista
+            con esa artística e incomparable manera de pescar,
+            usando dos brillantes estrellitas como anzuelos,
+            lúcidos luceros dentro de un eterno ciclo.
+
+            De la mano, un coro con un ligero soplar
+            de delicados pinceles que,
+            más allá de avivar el café de mi obsesión,
+            incitan al nacer de ilusiones cálidas y sutiles
+            en el gélido caminar errante
+            de un aventurero con mochila repleta
+            de libros existencialistas.
+
+            Un saludo consciente en aquel sueño lúcido.
+            Una sonrisa sincera y nerviosa,
+            con la compañía de la indiferencia
+            tras el susurro: “si supieras lo hermosa que te ves”.
+
+            Encaminan a derramar versos por doquier,
+            cual caudal incontrolable de río en junio.
+            Los bolígrafos no bastan,
+            y el papel no se asemeja al viento y su eternidad.
+
+            Por eso te escribo hasta en la cabecera
+            y dejo flotando tu nombre incontables veces,
+            cual blancas mariposas
+            por aquellos caminos de siempre.
+
+            Aquel poeta con la maldición
+            de ahogar con tinta tu santificado nombre,
+            para ocultar con la punta de una aguja
+            el iluminar del faro de un incontrolable sentimiento.
+
+            Un cobarde más con la ansiosa espera
+            del saludo de la luna
+            para sentirte tan cerca como el sueño lo permita,
+            y deseando que mis noches fueran días.
+        </div>
+    </div>
+
+    <!-- Enlace para volver a la página de publicaciones -->
+    <a href="publicaciones.html" class="volver">Volver a Mis Textos</a>
+
+    <!-- Script para aplicar el tema guardado -->
+    <script>
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('theme');
+        const body = document.body;
+
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

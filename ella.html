@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="possible.png">
+    <title>ella</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Garamond', serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s; /* Transición suave */
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        body.light-mode h1 {
+            color: #555; /* Color oscuro para el título en modo claro */
+        }
+
+        .contenido {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .poema {
+            white-space: pre-line; /* Conserva los saltos de línea */
+            font-size: 1.2em;
+            line-height: 1.8;
+            text-align: center; /* Texto centrado */
+            margin: 0 auto; /* Centrar el bloque */
+            padding: 0 20px; /* Espaciado lateral */
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
+        }
+
+        body.light-mode .volver {
+            color: black; /* Texto oscuro en modo claro */
+            border-bottom-color: black; /* Borde oscuro en modo claro */
+        }
+
+        .volver:hover {
+            color: #ccc;
+            border-bottom-color: #ccc;
+        }
+
+        body.light-mode .volver:hover {
+            color: #555; /* Color oscuro en modo claro */
+            border-bottom-color: #555; /* Borde oscuro en modo claro */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <h1>Ella</h1>
+
+    <div class="contenido">
+        <div class="poema">
+            La más bella flor del jardín de mis pensamientos,
+            reaviva mis deseos de caminar
+            con la esperanza de que sigas viva un día más.
+
+            Tu dulce risa explica el porqué de la existencia del todo,
+            esa suave caricia que roza al viento con tanta sutileza
+            hasta llegar al oído ansioso de este esclavo,
+            que se deleita y la guarda en un rincón profundo de su ser,
+            reservado exclusivamente para ti.
+
+            Una composición artística perfecta andante,
+            puesta en la Tierra con la misma finalidad
+            que la de un artista al exponer sus cuadros al observador:
+            la belleza humana y sutileza de la naturaleza reflejada en una mujer.
+
+            El capricho del universo de transformar materia inerte en su mejor creación,
+            añadir la inmensidad hipnotizante en tu profunda mirada,
+            las dos estrellas más brillantes de la noche en tus ojos,
+            y tu cabello con la seductora silueta de una cascada islandesa.
+
+            Ese modo único y patentado por ti de transmitir tranquilidad y pureza,
+            las mismas sensaciones como si fueras una princesa,
+            tu manera de fluir es un espectáculo completo,
+            semejante a la elegancia con que un Betta adorna el agua en la que se sumerge.
+
+            Inigualable mujer, con la construcción precisa para hacerme perder la razón,
+            permitiéndome escribir desde el pecho con libertad absoluta,
+            merecedora de poesías, canciones, composiciones,
+            y eterna dueña de mis noches de desvelo.
+
+            La luna, ya cansada de las maravillas que le cuento sobre ti,
+            desde hace un largo tiempo decidió dejar de brillar,
+            para que tu imagen se convierta en la luz inspiradora
+            que iluminaría la oscura existencia de este simple mortal.
+
+            Vive, vive y hazlo de nuevo,
+            que yo vivo a base de ti,
+            y eres lo único que necesito para poder renacer
+            cada vez que te dignas a aparecer...
+        </div>
+    </div>
+
+    <!-- Enlace para volver a la página de publicaciones -->
+    <a href="publicaciones.html" class="volver">Volver a Mis Textos</a>
+
+    <script>
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('theme');
+        const body = document.body;
+
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

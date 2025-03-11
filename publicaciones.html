@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="possible.png">
+    <title>textos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Garamond', serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-escritos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+            gap: 20px; /* Espacio entre las cajas */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .escrito {
+            background-color: #1a1a1a; /* Color de fondo de la caja */
+            border: 1px solid #333; /* Borde de la caja */
+            padding: 20px;
+            border-radius: 10px; /* Esquinas redondeadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none; /* Quitar subrayado del enlace */
+            color: inherit; /* Heredar el color del texto */
+            display: block; /* Hacer que toda la caja sea clickeable */
+        }
+
+        body.light-mode .escrito {
+            background-color: #f4f4f4; /* Fondo claro para las cajas */
+            border: 1px solid #ddd; /* Borde claro */
+            color: black; /* Texto oscuro */
+        }
+
+        .escrito:hover {
+            transform: translateY(-5px); /* Efecto de levantar la caja */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+        }
+
+        .escrito h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        body.light-mode .escrito h2 {
+            color: #555; /* Color oscuro para títulos en modo claro */
+        }
+
+        .escrito p {
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+
+        body.light-mode .volver {
+            color: black; /* Texto oscuro en modo claro */
+            border-bottom-color: black; /* Borde oscuro en modo claro */
+        }
+
+        .volver:hover {
+            color: #ccc;
+            border-bottom-color: #ccc;
+        }
+
+        body.light-mode .volver:hover {
+            color: #555; /* Color oscuro en modo claro */
+            border-bottom-color: #555; /* Borde oscuro en modo claro */
+        }
+
+        /* Estilos responsivos para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .contenedor-escritos {
+                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contenedor-escritos {
+                grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <h1>Mis Textos</h1>
+
+    <!-- Contenedor de escritos -->
+    <div class="contenedor-escritos">
+        <!-- Escrito 1 -->
+        <a href="armonico.html" class="escrito">
+            <h2>Armónico</h2>
+            <p>
+                "El cosmos se muestra orgulloso de su elegancia constante, vasto y complejo como las buenas mujeres. Distintos contrastes entre los tacones, pestañas, uñas y su vestido..."
+            </p>
+        </a>
+
+        <!-- Escrito 2 -->
+        <a href="ella.html" class="escrito">
+            <h2>Ella</h2>
+            <p>
+                "La más bella flor del jardín de mis pensamientos,
+                reaviva mis deseos de caminar con la esperanza de que sigas viva un día más."
+            </p>
+        </a>
+
+        <!-- Escrito 3 -->
+        <a href="pureza.html" class="escrito">
+            <h2>Pureza</h2>
+            <p>
+                "Tal como un arroyo, pudiste erosionar una roca
+                con la suavidad intensa del fluir de tus encantos,
+                actuando como agua en sí misma..."
+            </p>
+        </a>
+
+        <!-- Escrito 4 -->
+        <a href="ultimacarta.html" class="escrito">
+            <h2>Última Carta</h2>
+            <p>
+                "Un blanco con esencia de gardenia que se inventa recuerdos
+                para conectarlos a tu gran pureza y al color de aquel eterno encaje
+                que delineaba tu silueta..."
+            </p>
+        </a>
+
+        <!-- Escrito 5 -->
+        <a href="esperandote.html" class="escrito">
+            <h2>Esperándote</h2>
+            <p>
+                "Despiértame en la madrugada y hazme ver que tu rostro es aún más místico y perfecto
+                de lo que sea que en el momento esté ocurriendo en mis sueños de medianoche..."
+            </p>
+        </a>
+
+        <!-- Escrito 6 -->
+        <a href="doslocos.html" class="escrito">
+            <h2>Seremos dos locos</h2>
+            <p>
+                "Las rodillas comenzarán a doler, la espalda comenzará a molestar,
+                y con nostalgia recordaremos el ritmo de la juventud..."
+            </p>
+        </a>
+    </div>
+
+    <!-- Enlace para volver a la página principal -->
+    <a href="index.html" class="volver">Volver a la página principal</a>
+
+    <script>
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('theme');
+        const body = document.body;
+
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

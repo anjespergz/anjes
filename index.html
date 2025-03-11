@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="possible.png">
+    <title>anjes</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Garamond', serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        /* Foto de perfil con anillo */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white; /* Anillo blanco en modo oscuro */
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: border-color 0.5s;
+        }
+
+        /* Anillo oscuro en modo claro */
+        body.light-mode .profile-pic {
+            border-color: black;
+        }
+
+        /* Título */
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        /* Descripción */
+        .descripcion {
+            font-size: 1.4em;
+            max-width: 600px;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: justify;
+            padding: 0 20px;
+        }
+
+        /* Enlace */
+        .link {
+            font-size: 1.5em;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+
+        body.light-mode .link {
+            color: black;
+            border-bottom-color: black;
+        }
+
+        .link:hover {
+            color: #ccc;
+            border-bottom-color: #ccc;
+        }
+
+        body.light-mode .link:hover {
+            color: #555;
+            border-bottom-color: #555;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <!-- Foto de perfil con anillo -->
+    <img src="tu_foto.jpg" alt="Tu Foto" class="profile-pic" id="profile-pic">
+
+    <h1>anjes</h1>
+
+    <!-- Descripción -->
+    <p class="descripcion">
+        La curiosidad es el viento que impulsa mi caminar. Me sumerjo en la vastedad del conocimiento, no como un fin, sino como un medio para entender la danza eterna entre el caos y el orden. 
+        Cada interacción, cada hoja que cae, cada palabra dicha o callada, es un grano de arena en el desierto de la existencia, una lección que se ofrece a quien sabe escuchar. 
+        No busco respuestas definitivas, sino la elegancia de vivir en armonía con el flujo del universo, descalzo sobre la tierra y atento al susurro de las estrellas.
+    </p>
+
+    <!-- Enlace a publicaciones -->
+    <a href="publicaciones.html" class="link">Mis Textos</a>
+
+    <script>
+        // Cambio de tema al hacer clic en la foto
+        const profilePic = document.getElementById('profile-pic');
+        const body = document.body;
+
+        profilePic.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light'); // Guardar preferencia
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Guardar preferencia
+            }
+        });
+
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>

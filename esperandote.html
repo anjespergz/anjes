@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="possible.png">
+    <title>esperándote</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Garamond', serif;
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            transition: background-color 0.5s, color 0.5s; /* Transición suave */
+        }
+
+        /* Modo claro */
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        body.light-mode h1 {
+            color: #555; /* Color oscuro para el título en modo claro */
+        }
+
+        .contenido {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .poema {
+            white-space: pre-line; /* Conserva los saltos de línea */
+            font-size: 1.2em;
+            line-height: 1.8;
+            text-align: center; /* Texto centrado */
+            margin: 0 auto; /* Centrar el bloque */
+            padding: 0 20px; /* Espaciado lateral */
+        }
+
+        .volver {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
+        }
+
+        body.light-mode .volver {
+            color: black; /* Texto oscuro en modo claro */
+            border-bottom-color: black; /* Borde oscuro en modo claro */
+        }
+
+        .volver:hover {
+            color: #ccc;
+            border-bottom-color: #ccc;
+        }
+
+        body.light-mode .volver:hover {
+            color: #555; /* Color oscuro en modo claro */
+            border-bottom-color: #555; /* Borde oscuro en modo claro */
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <h1>Esperándote</h1>
+
+    <div class="contenido">
+        <div class="poema">
+            ¿Dónde te escondes que no te encuentro?
+            Necesito de ti y sigues escondida en algún rincón,
+            lejos de aquí, leyendo algún clásico de la literatura,
+            creando una obra de arte con tus manos
+            o amenizando el ambiente con las cuerdas de tu instrumento.
+
+            Chica tan diferente, de esas que ni siquiera pueden soñarse,
+            ya que la autenticidad en estos tiempos
+            es como encontrar una flor rompiendo el pavimento
+            de una avenida transitada.
+
+            Dicen que no se puede extrañar lo desconocido,
+            pero yo siento que necesito de ti
+            en esta monótona y fría noche.
+
+            Aparece y escapemos juntos de nuestra cárcel,
+            que es la rutina, y redescubramos el mundo a nuestra manera.
+            Seamos diferentes y olvidemos el papel
+            que la sociedad nos quiere hacer ocupar.
+
+            Tengamos esa casa cálida, hogareña y antigua
+            que tanto deseamos,
+            tengamos el romance del siglo
+            y no se lo contemos a nadie.
+
+            Hagamos de nuestra historia
+            el mayor y más bello de los secretos.
+
+            Nunca faltarán flores en la mesa,
+            y regaré tu corazón con el agua de mis textos.
+            Te llenaré los ojos de poesía
+            y cuidaré de tu alma con la sutileza
+            de una abuelita cuidando sus rosales.
+
+            No podrías dar menos
+            después de encontrar una gardenia
+            en un campo de tréboles.
+
+            Suaviza mi armadura con tus delicadas caricias
+            y con tus dedos pinta de mil colores
+            a este lienzo que espera a ese hambriento artista
+            que le dé razón a su existencia.
+
+            Desgarra el silencio de mis mañanas
+            con esos susurros angelicales.
+            Juncemos nuestros corazones
+            y convirtamos nuestros brazos en la verdadera casa.
+
+            Dejemos de temer a derramar el vaso
+            y amemos con la intensidad que el alma reclama.
+
+            Despiértame en la madrugada
+            y hazme ver que tu rostro es aún más místico y perfecto
+            de lo que sea que en el momento esté ocurriendo
+            en mis sueños de medianoche.
+
+            Pon mi mano sobre tu cabello
+            y te llenaré de caricias tiernas
+            mientras suelto un "te amo" inconsciente
+            hasta que concilies el sueño de nuevo.
+
+            Bailemos mejilla con mejilla,
+            exploremos la vida unidos de la mano
+            y fusionemos nuestros seres en un eterno abrazo.
+
+            Dejemos los cuerpos al lado
+            y desnudemos nuestro ser interno.
+
+            Lléname de tus pensamientos,
+            haz cesar mis monstruos internos
+            y unamos conciencias como símbolo de un beso profundo.
+        </div>
+    </div>
+
+    <!-- Enlace para volver a la página de publicaciones -->
+    <a href="publicaciones.html" class="volver">Volver a Mis Textos</a>
+
+    <!-- Script para aplicar el tema guardado -->
+    <script>
+        // Aplicar el tema guardado al cargar la página
+        const savedTheme = localStorage.getItem('theme');
+        const body = document.body;
+
+        if (savedTheme === 'light') {
+            body.classList.add('light-mode');
+        } else {
+            body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
