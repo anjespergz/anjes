@@ -5,121 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="possible.png">
     <title>El Principito</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Garamond', serif;
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        /* Modo claro */
-        body.light-mode {
-            background-color: white;
-            color: black;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
-
-        body.light-mode h1 {
-            color: #555;
-        }
-
-        .contenido {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: justify;
-            line-height: 1.8;
-        }
-
-        .seccion {
-            display: none; /* Ocultar todas las secciones por defecto */
-        }
-
-        .seccion.activa {
-            display: block; /* Mostrar solo la sección activa */
-        }
-
-        .navegacion {
-            margin-top: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .navegacion a {
-            font-size: 1.2em;
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        }
-
-        body.light-mode .navegacion a {
-            color: black;
-            border-bottom-color: black;
-        }
-
-        .navegacion a:hover {
-            color: #ccc;
-            border-bottom-color: #ccc;
-        }
-
-        body.light-mode .navegacion a:hover {
-            color: #555;
-            border-bottom-color: #555;
-        }
-
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.2em;
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
-        }
-
-        body.light-mode .volver {
-            color: black;
-            border-bottom-color: black;
-        }
-
-        .volver:hover {
-            color: #ccc;
-            border-bottom-color: #ccc;
-        }
-
-        body.light-mode .volver:hover {
-            color: #555;
-            border-bottom-color: #555;
-        }
-
-        /* Tamaño de letra igual al poema de "Ella" */
-        .ensayo {
-            font-size: 1.2em; /* Igual al poema de "Ella" */
-            white-space: normal;
-            line-height: 1.8;
-            text-align: justify;
-        }
-    </style>
+   <link rel="stylesheet" href="styles.css"></head>
 </head>
 <body class="dark-mode">
     <h1>El Principito</h1>
@@ -374,35 +260,8 @@
     <!-- Enlace para volver a la página de publicaciones -->
     <a href="publicaciones.html" class="volver">Volver a Mis Textos</a>
 
-    <script>
-        // Aplicar el tema guardado al cargar la página
-        const savedTheme = localStorage.getItem('theme');
-        const body = document.body;
-
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-        } else {
-            body.classList.add('dark-mode');
-        }
-
-        // Navegación entre secciones
-        const secciones = document.querySelectorAll('.seccion');
-        const links = document.querySelectorAll('.navegacion a');
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href').substring(1);
-                secciones.forEach(seccion => {
-                    seccion.classList.remove('activa');
-                    if (seccion.id === targetId) {
-                        seccion.classList.add('activa');
-                    }
-                });
-                // Desplazar la página hacia arriba
-                window.scrollTo(0, 0);
-            });
-        });
-    </script>
+    <script src="theme.js"></script>
 </body>
 </html>
+
+

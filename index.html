@@ -19,7 +19,8 @@
             justify-content: center;
             min-height: 100vh;
             text-align: center;
-            transition: background-color 0.5s, color 0.5s;
+            transition: opacity 0.4s ease, background-color 0.5s, color 0.5s;
+            opacity: 1;
         }
 
         /* Modo claro */
@@ -28,12 +29,17 @@
             color: black;
         }
 
+        /* Efecto fade-out para transición */
+        body.fade-out {
+            opacity: 0;
+        }
+
         /* Foto de perfil con anillo */
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            border: 3px solid white; /* Anillo blanco en modo oscuro */
+            border: 3px solid white;
             margin-bottom: 20px;
             cursor: pointer;
             transition: border-color 0.5s;
@@ -111,11 +117,11 @@
             if (body.classList.contains('dark-mode')) {
                 body.classList.remove('dark-mode');
                 body.classList.add('light-mode');
-                localStorage.setItem('theme', 'light'); // Guardar preferencia
+                localStorage.setItem('theme', 'light');
             } else {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark'); // Guardar preferencia
+                localStorage.setItem('theme', 'dark');
             }
         });
 
@@ -126,6 +132,15 @@
         } else {
             body.classList.add('dark-mode');
         }
+
+        // Transición suave al hacer clic en "Mis Textos"
+        document.querySelector('a.link').addEventListener('click', function(e) {
+            e.preventDefault();
+            body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 400); // 0.4s = duración de la transición
+        });
     </script>
 </body>
 </html>

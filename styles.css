@@ -1,0 +1,399 @@
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-texto-oscuro: #ffffff;
+    --color-fondo-oscuro: #000000;
+    --color-accent-oscuro: #cccccc;
+    --color-texto-claro: #000000;
+    --color-fondo-claro: #ffffff;
+    --color-accent-claro: #555555;
+    --transicion-tema: all 0.5s ease;
+    --transicion-interaccion: all 0.3s ease;
+}
+
+/* ===== ESTILOS GENERALES ===== */
+body {
+    font-family: 'Garamond', serif;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-oscuro);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.8;
+    transition: var(--transicion-tema);
+    min-height: 100vh;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+/* ===== MODOS CLARO/OSCURO ===== */
+body.light-mode {
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-claro);
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: var(--color-accent-claro);
+}
+
+/* ===== TRANSICIONES ENTRE PÁGINAS ===== */
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+@font-face {
+    font-family: 'Garamond';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Garamond'), local('Garamond-Regular');
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-accent-oscuro);
+    text-align: center;
+    font-weight: normal; /* Más similar al original */
+    letter-spacing: normal; /* Eliminamos el espaciado adicional */
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent-oscuro);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+.contenido {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contenido-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+/* Oculta todas las secciones por defecto */
+.seccion {
+  display: none;
+}
+
+/* Muestra solo la sección que tenga la clase "activa" */
+.seccion.activa {
+  display: block;
+}
+
+
+/* ===== TARJETAS DE ESCRITOS ===== */
+.contenedor-escritos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.escrito {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: 1px solid #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transicion-interaccion);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+}
+
+body.light-mode .escrito {
+    background-color: rgba(244, 244, 244, 0.9);
+    border: 1px solid #ddd;
+}
+
+.escrito:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.escrito h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-accent-oscuro);
+    padding-right: 60px;
+}
+
+.fecha {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.8rem;
+    color: #888;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 3px 8px;
+    border-radius: 10px;
+}
+
+body.light-mode .fecha {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ELEMENTOS DE TEXTO ===== */
+.poema, .ensayo {
+    white-space: pre-line;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.poema {
+    text-align: center;
+}
+
+.ensayo {
+    text-align: justify;
+    white-space: normal;
+}
+
+/* ===== NAVEGACIÓN ===== */
+.volver {
+    display: block; /* Cambiado a block para centrado */
+    text-align: center; /* Centrado del texto */
+    margin: 40px auto 0; /* Centrado del elemento */
+    font-size: 1.2rem;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-texto-oscuro);
+    padding-bottom: 5px;
+    transition: var(--transicion-interaccion);
+    width: max-content; /* Ancho según contenido */
+}
+
+.navegacion a {
+    display: inline-block; /* Para navegación entre secciones */
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-texto-oscuro);
+    padding-bottom: 5px;
+    transition: var(--transicion-interaccion);
+}
+
+body.light-mode .volver, 
+body.light-mode .navegacion a {
+    color: var(--color-texto-claro);
+    border-bottom-color: var(--color-texto-claro);
+}
+
+.volver:hover, .navegacion a:hover {
+    color: var(--color-accent-oscuro);
+    border-bottom-color: var(--color-accent-oscuro);
+}
+
+body.light-mode .volver:hover,
+body.light-mode .navegacion a:hover {
+    color: var(--color-accent-claro);
+    border-bottom-color: var(--color-accent-claro);
+}
+
+.navegacion {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+.progress-container {
+    width: 100%;
+    height: 4px;
+    background: rgba(51, 51, 51, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 4px;
+    background: var(--color-accent-oscuro);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+body.light-mode .progress-bar {
+    background: var(--color-accent-claro);
+}
+
+/* ===== PERFIL ===== */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--color-texto-oscuro);
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: var(--transicion-tema);
+    object-fit: cover;
+    /* Eliminada la animación de flotar */
+}
+
+body.light-mode .profile-pic {
+    border-color: var(--color-texto-claro);
+}
+
+/* ===== SECCIÓN PRINCIPAL (INDEX) ===== */
+.descripcion-container {
+    margin: 2rem 0;
+    padding: 0 20px;
+    max-width: 600px;
+}
+
+.descripcion {
+    font-size: 1.3rem;
+    text-align: justify;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.enlace-container {
+    margin-top: 2rem;
+}
+
+.link {
+    font-size: 1.4rem;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    border-bottom: 2px solid var(--color-texto-oscuro);
+    padding-bottom: 5px;
+    transition: var(--transicion-interaccion);
+    position: relative;
+    display: inline-block;
+}
+
+body.light-mode .link {
+    color: var(--color-texto-claro);
+    border-bottom-color: var(--color-texto-claro);
+}
+
+.link:hover {
+    color: var(--color-accent-oscuro);
+    border-bottom-color: var(--color-accent-oscuro);
+}
+
+body.light-mode .link:hover {
+    color: var(--color-accent-claro);
+    border-bottom-color: var(--color-accent-claro);
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== RESPONSIVIDAD ===== */
+@media (max-width: 768px) {
+    .contenedor-escritos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .descripcion {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-escritos {
+        grid-template-columns: 1fr;
+    }
+    
+    .poema, .ensayo {
+        font-size: 1.1rem;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .link {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== MEJORAS DE ACCESIBILIDAD ===== */
+@media (prefers-reduced-motion) {
+    .transition-fade {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent-oscuro);
+    outline-offset: 3px;
+}
+
+body.light-mode :focus-visible {
+    outline-color: var(--color-accent-claro);
+}

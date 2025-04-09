@@ -5,83 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="possible.png">
     <title>dos locos</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: 'Garamond', serif;
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            text-align: center;
-            transition: background-color 0.5s, color 0.5s; /* Transición suave */
-        }
+<link rel="stylesheet" href="styles.css"></head>
 
-        /* Modo claro */
-        body.light-mode {
-            background-color: white;
-            color: black;
-        }
-
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
-
-        body.light-mode h1 {
-            color: #555; /* Color oscuro para el título en modo claro */
-        }
-
-        .contenido {
-            max-width: 800px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .poema {
-            white-space: pre-line; /* Conserva los saltos de línea */
-            font-size: 1.2em;
-            line-height: 1.8;
-            text-align: center; /* Texto centrado */
-            margin: 0 auto; /* Centrar el bloque */
-            padding: 0 20px; /* Espaciado lateral */
-        }
-
-        .volver {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.2em;
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 5px;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease; /* Transición suave */
-        }
-
-        body.light-mode .volver {
-            color: black; /* Texto oscuro en modo claro */
-            border-bottom-color: black; /* Borde oscuro en modo claro */
-        }
-
-        .volver:hover {
-            color: #ccc;
-            border-bottom-color: #ccc;
-        }
-
-        body.light-mode .volver:hover {
-            color: #555; /* Color oscuro en modo claro */
-            border-bottom-color: #555; /* Borde oscuro en modo claro */
-        }
-    </style>
-</head>
-<body class="dark-mode">
+<body class="dark-mode transition-fade">
     <h1>Dos Locos</h1>
 
     <div class="contenido">
@@ -296,16 +222,7 @@
     <!-- Enlace para volver a la página de publicaciones -->
     <a href="publicaciones.html" class="volver">Volver a Mis Textos</a>
 
-    <script>
-        // Aplicar el tema guardado al cargar la página
-        const savedTheme = localStorage.getItem('theme');
-        const body = document.body;
+   <script src="theme.js"></script>
 
-        if (savedTheme === 'light') {
-            body.classList.add('light-mode');
-        } else {
-            body.classList.add('dark-mode');
-        }
-    </script>
 </body>
 </html>
