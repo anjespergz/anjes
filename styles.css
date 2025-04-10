@@ -14,11 +14,13 @@
     --color-accent-claro: #555555;
     --transicion-tema: all 0.5s ease;
     --transicion-interaccion: all 0.3s ease;
+    --font-primary: 'Cormorant Garamond', serif;
 }
 
 /* ===== ESTILOS GENERALES ===== */
 body {
-    font-family: 'Garamond', serif;
+    font-family: var(--font-primary);
+    font-weight: 400;
     background-color: var(--color-fondo-oscuro);
     color: var(--color-texto-oscuro);
     margin: 0;
@@ -57,34 +59,34 @@ html.is-animating .transition-fade {
 }
 
 /* ===== TIPOGRAFÍA ===== */
-@font-face {
-    font-family: 'Garamond';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Garamond'), local('Garamond-Regular');
-}
-
 h1 {
+    font-family: var(--font-primary);
+    font-weight: 600;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     color: var(--color-accent-oscuro);
     text-align: center;
-    font-weight: normal; /* Más similar al original */
-    letter-spacing: normal; /* Eliminamos el espaciado adicional */
+    letter-spacing: normal;
 }
 
 h2 {
+    font-family: var(--font-primary);
+    font-weight: 600;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: var(--color-accent-oscuro);
 }
 
 h3 {
+    font-family: var(--font-primary);
+    font-weight: 500;
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
 p {
+    font-family: var(--font-primary);
+    font-weight: 400;
     margin-bottom: 1.2rem;
     font-size: 1.1rem;
 }
@@ -106,7 +108,6 @@ p {
     text-align: center;
 }
 
-
 /* Oculta todas las secciones por defecto */
 .seccion {
   display: none;
@@ -116,7 +117,6 @@ p {
 .seccion.activa {
   display: block;
 }
-
 
 /* ===== TARJETAS DE ESCRITOS ===== */
 .contenedor-escritos {
@@ -129,6 +129,7 @@ p {
 }
 
 .escrito {
+    font-family: var(--font-primary);
     background-color: rgba(26, 26, 26, 0.8);
     border: 1px solid #333;
     padding: 25px;
@@ -152,6 +153,8 @@ body.light-mode .escrito {
 }
 
 .escrito h2 {
+    font-family: var(--font-primary);
+    font-weight: 600;
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: var(--color-accent-oscuro);
@@ -159,6 +162,7 @@ body.light-mode .escrito {
 }
 
 .fecha {
+    font-family: var(--font-primary);
     position: absolute;
     top: 15px;
     right: 15px;
@@ -175,6 +179,7 @@ body.light-mode .fecha {
 
 /* ===== ELEMENTOS DE TEXTO ===== */
 .poema, .ensayo {
+    font-family: var(--font-primary);
     white-space: pre-line;
     font-size: 1.2rem;
     line-height: 1.9;
@@ -193,20 +198,24 @@ body.light-mode .fecha {
 
 /* ===== NAVEGACIÓN ===== */
 .volver {
-    display: block; /* Cambiado a block para centrado */
-    text-align: center; /* Centrado del texto */
-    margin: 40px auto 0; /* Centrado del elemento */
+    font-family: var(--font-primary);
+    font-weight: 500;
+    display: block;
+    text-align: center;
+    margin: 40px auto 0;
     font-size: 1.2rem;
     color: var(--color-texto-oscuro);
     text-decoration: none;
     border-bottom: 2px solid var(--color-texto-oscuro);
     padding-bottom: 5px;
     transition: var(--transicion-interaccion);
-    width: max-content; /* Ancho según contenido */
+    width: max-content;
 }
 
 .navegacion a {
-    display: inline-block; /* Para navegación entre secciones */
+    font-family: var(--font-primary);
+    font-weight: 500;
+    display: inline-block;
     text-align: center;
     margin-top: 2rem;
     font-size: 1.2rem;
@@ -272,7 +281,6 @@ body.light-mode .progress-bar {
     cursor: pointer;
     transition: var(--transicion-tema);
     object-fit: cover;
-    /* Eliminada la animación de flotar */
 }
 
 body.light-mode .profile-pic {
@@ -287,6 +295,7 @@ body.light-mode .profile-pic {
 }
 
 .descripcion {
+    font-family: var(--font-primary);
     font-size: 1.3rem;
     text-align: justify;
     animation: fadeIn 1.2s ease-out;
@@ -297,6 +306,8 @@ body.light-mode .profile-pic {
 }
 
 .link {
+    font-family: var(--font-primary);
+    font-weight: 500;
     font-size: 1.4rem;
     color: var(--color-texto-oscuro);
     text-decoration: none;
